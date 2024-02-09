@@ -23,7 +23,7 @@ INSERT INTO "style" ("id", "name") VALUES
 (17, 'Trip-Hop'),
 (18, 'Progressive Metal'),
 (19, 'Progressive Rock'),
-(20, 'Ska'),
+(20, 'Ska');
 
 
 INSERT INTO "tuning" ("id", "name", "strings") VALUES
