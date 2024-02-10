@@ -1,5 +1,9 @@
 # Tablotheque-server
 
+All your tablatures in one place !  
+This application collects all your tablatures links for the songs you are learning, and enables you to follow your progression.  
+Songs can be sorted by style, tuning, difficulty, etc..., to create your own tab library.  
+
 ## Endpoints
 
 ### Auth
