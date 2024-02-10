@@ -1,8 +1,5 @@
 BEGIN;
 
-INSERT INTO "user" ("id", "username", "mail", "password") VALUES
-(1, 'admin', 'admin@admin.com', 'admin');
-
 INSERT INTO "style" ("id", "name") VALUES
 (1, 'Rock'),
 (2, 'Pop'),
