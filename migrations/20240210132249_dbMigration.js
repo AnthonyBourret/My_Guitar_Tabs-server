@@ -41,6 +41,7 @@ exports.up = (knex) => knex.schema
         table.timestamp('updated_at');
     })
     .createTable('song_has_style', (table) => {
+        table.increments('id').primary();
         table.integer('song_id').notNullable().references('id').inTable('song');
         table.integer('style_id').notNullable().references('id').inTable('style');
         table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable();

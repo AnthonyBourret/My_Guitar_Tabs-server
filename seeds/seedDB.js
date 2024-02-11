@@ -85,7 +85,7 @@ exports.seed = async (knex) => {
         { min: 1, max: capoOptions.length - 1 },
       )],
       user_id: usersIds[faker.number.int(
-        { min: 1, max: usersIds.length - 1 },
+        { min: 0, max: usersIds.length - 1 },
       )],
       tuning_id: faker.number.int(
         { min: 1, max: NB_TUNINGS },
@@ -103,7 +103,7 @@ exports.seed = async (knex) => {
   const songHasStyle = [];
   for (let i = 0; i < songsIds.length; i += 1) {
     const nbStylesOnSongs = faker.number.int({ min: 1, max: 2 });
-    for (let j = 0; j < nbStylesOnSongs; j++) {
+    for (let j = 0; j < nbStylesOnSongs; j += 1) {
       songHasStyle.push({
         song_id: songsIds[i],
         style_id: faker.number.int(
