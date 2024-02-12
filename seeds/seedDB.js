@@ -1,5 +1,7 @@
-exports.seed = async (knex) => {
+const bcrypt = require('bcrypt');
 
+exports.seed = async (knex) => {
+  
   // Options needed for the seed
   const difficultyOptions = [
       "Beginner",
@@ -31,6 +33,8 @@ exports.seed = async (knex) => {
   const NB_TUNINGS = 18;
   const NB_STYLES = 20;
 
+  const saltRounds = 10;
+
   const { fakerFR: faker } = await import('@faker-js/faker');
 
   // Delete existing entries
@@ -42,19 +46,17 @@ exports.seed = async (knex) => {
   const users = [];
   for (let i = 0; i < NB_USERS; i += 1) {
     users.push({
-      id: i + 1,
       username: faker.internet.userName(),
       mail: faker.internet.email(),
-      password: faker.internet.password(),
+      password: await bcrypt.hash(faker.internet.password(), saltRounds),
       picture: faker.image.avatar(),
     });
   }
 
   users.push({
-    id: NB_USERS + 1,
     username: 'admin',
     mail: 'admin@gmail.com',
-    password: 'admin',
+    password: await bcrypt.hash('admin', saltRounds),
     picture: faker.image.avatar(),
   });
 
@@ -69,7 +71,6 @@ exports.seed = async (knex) => {
   const songs = [];
   for (let i = 0; i < NB_SONGS; i += 1) {
     songs.push({
-      id: i + 1,
       title: faker.word.words({ min: 2, max: 5 }),
       artist: faker.person.lastName(),
       tab_link: faker.internet.url(),
