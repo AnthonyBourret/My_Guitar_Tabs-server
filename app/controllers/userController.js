@@ -59,7 +59,6 @@ const userController = {
                 mail,
                 password,
                 passwordConfirm,
-                picture,
             } = req.body;
 
             // If the email is not valid, return 400 error
@@ -94,7 +93,6 @@ const userController = {
                 username,
                 mail,
                 password: hashedPassword,
-                picture,
             });
 
             if (!newUser) {
@@ -102,7 +100,11 @@ const userController = {
                 return;
             }
 
-        res.json("Account created successfully");
+            if (newUser) {
+                req.session.user = newUser.id;
+            }
+
+        res.json(newUser.id);
 
         } catch (error) {
 

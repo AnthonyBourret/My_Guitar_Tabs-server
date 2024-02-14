@@ -20,9 +20,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
+    "db:create": "psql -U admin -d myguitartabs -f data/create_db.sql",
+    "db:populate": "psql -U admin -d myguitartabs -f data/populate_db.sql",
+    "knex:seed": "knex seed:run",
     "knex:migration": "knex migrate:make update_the_name",
-    "knex:update": "knex migrate:latest",
-    "knex:seed": "knex seed:run"
+    "knex:update": "knex migrate:latest"
   },
   "keywords": [],
   "author": "",

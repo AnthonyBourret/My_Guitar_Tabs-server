@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.use(session({
     secret: 'keyboardcat',
+    name: 'sessionId',
     resave: true,
     saveUninitialized: true,
 }));
