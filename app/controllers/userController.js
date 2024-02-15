@@ -104,7 +104,7 @@ const userController = {
                 req.session.user = newUser.id;
             }
 
-        res.json(newUser.id);
+            res.json({ id: newUser.id, username: newUser.username });
 
         } catch (error) {
 

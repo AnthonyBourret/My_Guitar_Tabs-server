@@ -36,7 +36,7 @@ const authController = {
             };
 
             req.session.user = userInfos.id;
-            res.json(userInfos);
+            res.json({ id: userInfos.id, username: userInfos.username, picture: userInfos.picture });
 
         } catch (error) {
             console.trace(error);
