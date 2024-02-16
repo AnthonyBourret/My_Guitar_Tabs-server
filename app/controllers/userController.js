@@ -14,7 +14,7 @@ const userController = {
             return;
         }
         // The user informations are sent as a JSON object
-        res.json(user);
+        res.json({id: user.id, username: user.username, mail: user.mail, picture: user.picture});
 
         } catch (error) {
             console.trace(error);
