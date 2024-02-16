@@ -77,19 +77,19 @@ exports.seed = async (knex) => {
       lyrics_link: faker.internet.url(),
       comments: faker.lorem.sentences({ min: 1, max: 3 }),
       difficulty: difficultyOptions[faker.number.int(
-        { min: 1, max: difficultyOptions.length - 1 },
+        { min: 0, max: difficultyOptions.length - 1 },
       )],
       status: statusOptions[faker.number.int(
-        { min: 1, max: statusOptions.length - 1 },
+        { min: 0, max: statusOptions.length - 1 },
       )],
       capo: capoOptions[faker.number.int(
-        { min: 1, max: capoOptions.length - 1 },
+        { min: 0, max: capoOptions.length - 1 },
       )],
       user_id: usersIds[faker.number.int(
         { min: 0, max: usersIds.length - 1 },
       )],
       tuning_id: faker.number.int(
-        { min: 1, max: NB_TUNINGS },
+        { min: 0, max: NB_TUNINGS },
       ),
     });
   }
