@@ -9,13 +9,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(session({
-    secret: 'keyboardcat',
+    secret: process.env.SECRET_KEY,
     name: 'sessionId',
     resave: true,
-    saveUninitialized: true,
+    saveUninitialized: false,
 }));
 
-app.use(cors({ credentials: true, origin: process.env.CLIENT_URL }));
+app.use(cors({
+    credentials: true,
+    origin: process.env.CLIENT_URL
+}));
 
 app.use(router);
 
