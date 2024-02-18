@@ -1,26 +1,27 @@
 BEGIN;
 
 INSERT INTO "style" ("id", "name") VALUES
-(1, 'Rock'),
-(2, 'Pop'),
-(3, 'Blues'),
-(4, 'Jazz'),
-(5, 'Folk'),
-(6, 'Country'),
-(7, 'Metal'),
-(8, 'Punk'),
-(9, 'Reggae'),
-(10, 'Funk'),
-(11, 'Classical'),
-(12, 'Heavy Metal'),
-(13, 'Grunge'),
-(14, 'Hard Rock'),
-(15, 'Death Metal'),
-(16, 'Hip-Hop'),
-(17, 'Trip-Hop'),
-(18, 'Progressive Metal'),
-(19, 'Progressive Rock'),
-(20, 'Ska');
+(1, 'Blues'),
+(2, 'Classical'),
+(3, 'Country'),
+(4, 'Death Metal'),
+(5, 'Electro'),
+(6, 'Folk'),
+(7, 'Funk'),
+(8, 'Grunge'),
+(9, 'Hard Rock'),
+(10, 'Heavy Metal'),
+(11, 'Hip-Hop'),
+(12, 'Jazz'),
+(13, 'Metal'),
+(14, 'Pop'),
+(15, 'Progressive Metal'),
+(16, 'Progressive Rock'),
+(17, 'Punk'),
+(18, 'Reggae'),
+(19, 'Rock'),
+(20, 'Trip-Hop'),
+(21, 'Ska');
 
 
 INSERT INTO "tuning" ("id", "name", "strings") VALUES

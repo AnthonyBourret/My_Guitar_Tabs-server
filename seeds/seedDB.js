@@ -31,7 +31,7 @@ exports.seed = async (knex) => {
   const NB_USERS = 3;
   const NB_SONGS = 30;
   const NB_TUNINGS = 18;
-  const NB_STYLES = 20;
+  const NB_STYLES = 21;
 
   const saltRounds = 10;
 
@@ -89,7 +89,7 @@ exports.seed = async (knex) => {
         { min: 0, max: usersIds.length - 1 },
       )],
       tuning_id: faker.number.int(
-        { min: 0, max: NB_TUNINGS },
+        { min: 1, max: NB_TUNINGS },
       ),
     });
   }

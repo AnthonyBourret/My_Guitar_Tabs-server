@@ -131,10 +131,14 @@ const userController = {
                 res.status(400).json({ error: 'Passwords do not match' });
                 return;
             }
+
+            const saltRounds = 10;
+            const hashedPassword = await bcrypt.hash(password, saltRounds);
+
             await updatedUser.update({
                 username,
                 mail,
-                password,
+                password : hashedPassword,
                 picture,
             });
 
