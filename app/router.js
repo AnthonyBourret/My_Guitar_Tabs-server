@@ -18,6 +18,7 @@ router.post('/signup', userController.createUser);
 // User
 router.get('/user/:id', userController.findUser);
 router.patch('/user/:id', userController.updateUser);
+router.patch('/user/:id/password', userController.updatePassword);
 router.delete('/user/:id', userController.deleteUser);
 router.get('/user/:id/songs', userController.findUserSongs);
 

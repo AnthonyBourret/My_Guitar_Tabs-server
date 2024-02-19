@@ -121,9 +121,35 @@ const userController = {
             const {
                 username,
                 mail,
+                picture,
+            } = req.body;
+
+            await updatedUser.update({
+                username,
+                mail,
+                picture,
+            });
+
+            if (!updatedUser) {
+                res.status(404).json({ error: 'An error occured' });
+                return;
+            }
+            res.json("Modification saved");
+
+        } catch (error) {
+            console.trace(error);
+            res.status(500).json(error.toString());
+        }
+    },
+
+    async updatePassword(req, res) {
+        try {
+            const userId = req.params.id;
+            const updatedUser = await User.findByPk(userId);
+
+            const {
                 password,
                 passwordConfirm,
-                picture,
             } = req.body;
 
             // If the new password and the confirmed new password are not the same, return a 400 error
@@ -136,17 +162,14 @@ const userController = {
             const hashedPassword = await bcrypt.hash(password, saltRounds);
 
             await updatedUser.update({
-                username,
-                mail,
                 password : hashedPassword,
-                picture,
             });
 
             if (!updatedUser) {
                 res.status(404).json({ error: 'An error occured' });
                 return;
             }
-            res.json("Modifications saved");
+            res.json("Password changed");
 
         } catch (error) {
             console.trace(error);
