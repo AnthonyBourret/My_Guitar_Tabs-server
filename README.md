@@ -17,6 +17,7 @@ Songs can be sorted by style, tuning, difficulty, etc..., to create your own tab
 ### User
 
 - **/user/:id** => GET/PATCH/DELETE (Get/Edit user informations/Delete account, id => user id)
+- **/user/:id/password** => PATCH (Edit password, id => user id)
 - **/user/:id/songs** => GET (Get all songs from an user, id => user id)
 
 ### Song
